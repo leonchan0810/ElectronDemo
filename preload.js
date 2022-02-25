@@ -1,3 +1,4 @@
+const { contextBridge } = require('electron')
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -10,3 +11,5 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${dependency}-version`, process.versions[dependency])
   }
 })
+
+contextBridge.exposeInMainWorld('versions', process.versions)
