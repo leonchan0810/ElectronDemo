@@ -1,7 +1,7 @@
 {
-  "name": "tmsdk_demo",
+  "name": "electron_demo",
   "version": "1.0.0",
-  "description": "TMSDK Demo",
+  "description": "Electron Demo",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,7 +31,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "tmsdk_demo"
+            "name": "electron_demo"
           }
         },
         {
