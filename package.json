@@ -1,5 +1,5 @@
 {
-  "name": "electron_demo",
+  "name": "electron-demo",
   "version": "1.0.0",
   "description": "Electron Demo",
   "main": "main.js",
@@ -10,7 +10,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish"
   },
-  "author": "liochen",
+  "author": "Leon",
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
