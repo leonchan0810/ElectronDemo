@@ -14,5 +14,6 @@ const NOTIFICATION_BODY = 'Notification from the Renderer process. Click to log 
 const CLICK_MESSAGE = 'Notification clicked!'
 
 new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY }).onclick = () => {
+    console.log('clicked');
     document.getElementById("output").innerText = CLICK_MESSAGE
 }

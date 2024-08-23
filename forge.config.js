@@ -29,6 +29,16 @@ module.exports = {
       name: '@electron-forge/plugin-auto-unpack-natives',
       config: {},
     },
+    {
+      name: '@electron-forge/plugin-electronegativity',
+      config: {
+        // Electronegativity 配置选项
+        isSarif: false, // 是否输出 SARIF 格式的报告
+        isDev: false,   // 是否在开发模式下运行
+        verbose: true,  // 是否输出详细信息
+        // 其他 Electronegativity 配置选项
+      }
+    },
     // Fuses are used to enable/disable various Electron functionality
     // at package time, before code signing the application
     new FusesPlugin({
