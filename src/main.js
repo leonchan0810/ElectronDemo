@@ -9,7 +9,7 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-function createWindow () {
+const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -20,13 +20,15 @@ function createWindow () {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html')).then(r => {
-    console.log(r);
-  });
+  if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
+    mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
+  } else {
+    mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
+  }
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
-}
+  // mainWindow.webContents.openDevTools();
+};
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
