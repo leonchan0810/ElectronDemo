@@ -22,6 +22,7 @@ export default defineConfig((env) => {
       rollupOptions: {
         external,
       },
+      outDir: '.vite/build/main',
     },
     plugins: [pluginHotRestart('restart')],
     define,

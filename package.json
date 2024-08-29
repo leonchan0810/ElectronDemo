@@ -3,7 +3,7 @@
   "productName": "electron-demo",
   "version": "1.0.0",
   "description": "Electron Demo",
-  "main": ".vite/build/main.js",
+  "main": ".vite/build/main/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx electron-forge start",

@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 const path = require('node:path');
 
 app.enableSandbox();
@@ -15,7 +15,7 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, '../preload/index.js'),
     },
   });
 
@@ -36,6 +36,12 @@ const createWindow = () => {
 app.whenReady().then(() => {
   createWindow();
 
+  // DevTools shortcut
+  globalShortcut.register('CommandOrControl+Shift+D', () => {
+    let focusWin = BrowserWindow.getFocusedWindow();
+    focusWin && focusWin.toggleDevTools()
+  });
+
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   app.on('activate', () => {
@@ -49,9 +55,9 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+  // if (process.platform !== 'darwin') {
     app.quit();
-  }
+  // }
 });
 
 // In this file you can include the rest of your app's specific main process

@@ -26,6 +26,7 @@ export default defineConfig((env) => {
           assetFileNames: '[name].[ext]',
         },
       },
+      outDir: '.vite/build/preload',
     },
     plugins: [pluginHotRestart('reload')],
   };
