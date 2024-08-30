@@ -19,9 +19,9 @@ export default defineConfig((env) => {
   return {
     root: path.join(root, 'src/renderer'),
     mode,
-    base: '/',
+    base: './',
     build: {
-      outDir: `.vite/build/renderer/${name}`,
+      outDir: path.join(__dirname, `.vite/build/renderer/${name}`),
     },
     plugins: [
         pluginExposeRenderer(name),

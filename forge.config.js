@@ -40,6 +40,10 @@ module.exports = {
             entry: 'src/preload/index.js',
             config: 'vite.preload.config.mjs',
           },
+          {
+            // entry: 'src/renderer/index.html',
+            config: 'vite.renderer.config.mjs',
+          }
         ],
         renderer: [
           {

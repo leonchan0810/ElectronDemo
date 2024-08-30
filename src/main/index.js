@@ -25,9 +25,6 @@ const createWindow = () => {
   } else {
     mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
   }
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -40,6 +37,7 @@ app.whenReady().then(() => {
   globalShortcut.register('CommandOrControl+Shift+D', () => {
     let focusWin = BrowserWindow.getFocusedWindow();
     focusWin && focusWin.toggleDevTools()
+    // focusWin.webContents.openDevTools();
   });
 
   // On OS X it's common to re-create a window in the app when the
