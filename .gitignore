@@ -92,3 +92,5 @@ typings/
 out/
 
 .idea/workspace.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/CopilotChatHistory.xml
